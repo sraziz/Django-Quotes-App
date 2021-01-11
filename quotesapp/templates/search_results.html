@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container text-center">
+  <div class="row">
+      <div class="col-md-10">
+          <br> 
+          <h3  class="bg-dark text-white"> Quote Results</h3>
+          <br>
+
+            {% for quotes in object_list %}
+              <div class="shadow card"> 
+                <div class="card-body">
+                    <h6 class="card-title">{{ quotes.by }}</h6>
+                    <p>{{ quotes.quotation }}</p>
+                </div>
+              </div>
+              <br>
+              {% empty %}
+                <p>OOPS! No matching quotes found. Please try again. </p>
+            {% endfor %}
+            <br>
+           
+            <a href="{% url 'home' %}" class="btn btn-primary">Search another quote</a>
+{% endblock%}

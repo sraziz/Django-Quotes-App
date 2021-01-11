@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="container text-center">
+
+<br>
+    <div class="shadow card"> 
+        <div class="card-body">
+        
+            <h5 class="card-title">Search Quotes</h5>
+<form action="{% url 'search_results' %}" method="get">
+    <input name="q" type="text" placeholder="  ENTER KEYWORDS HERE" id="q" style="height:32px" required />
+    <br>
+    <br>
+    <button onClick="{% url 'search_results' %}" class="btn btn-success">Search</button>
+</form>
+        </div>
+    </div>
+</div>
+{% endblock%}
+
